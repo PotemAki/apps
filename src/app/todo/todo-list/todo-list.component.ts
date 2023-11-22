@@ -39,8 +39,10 @@ export class TodoListComponent implements OnInit, OnDestroy{
   dropOnToDo(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      this.dragId = '';
     } else {
       this.infoTimeout(`you can't move it back here!`)
+      this.dragId = '';
     }
   }
 
@@ -52,6 +54,7 @@ export class TodoListComponent implements OnInit, OnDestroy{
       movedElement.doneDate = nowDate.toString();
       this.archive.push(movedElement);
     } 
+    this.dragId = '';
     this.todoService.updateElements(this.todo, this.archive)
   }
 
@@ -64,6 +67,7 @@ export class TodoListComponent implements OnInit, OnDestroy{
     if (indexArchive !== -1) {
       this.archive.splice(index, 1)[0];
     } 
+    this.dragId = '';
     this.todoService.updateElements(this.todo, this.archive)
   }
 

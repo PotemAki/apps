@@ -5,14 +5,14 @@ import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
 @Injectable({ providedIn: 'root' })
 export class ToDoService {
   public todo: ToDo[] = [
-    {text: 'Go to church', date: 'Sat Nov 25 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"},
-    {text: 'Go to shopping', date: 'Sat Nov 26 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"},
-    {text: 'Dentist appointment', date: 'Sat Nov 29 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"}
+    {text: 'Go to church', date: 'Sat Nov 25 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPtesta', group:"abcdef"},
+    {text: 'Go to shopping', date: 'Sat Nov 26 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPtestb', group:"abcdef"},
+    {text: 'Dentist appointment', date: 'Sat Nov 29 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPtestc', group:"abcdef"}
   ]
 
   public todoSubject: BehaviorSubject<ToDo[]> = new BehaviorSubject<ToDo[]>([]);
   
-  public archive: ToDo[] = [{text: 'Visit a friend', date: 'Sat Nov 25 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef", doneDate: 'Sat Nov 19 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)' }]
+  public archive: ToDo[] = [{text: 'Visit a friend', date: 'Sat Nov 25 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPtestd', group:"abcdef", doneDate: 'Sat Nov 19 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)' }]
 
   public archiveSubject: BehaviorSubject<ToDo[]> = new BehaviorSubject<ToDo[]>([]);
 

@@ -156,5 +156,9 @@
     width: 100%;
     margin-top: 10px;
   }
-  
+  .header{
+    height: 20%;
+    max-height: 250px;
+    margin-bottom: 0px;
+  }
 }
