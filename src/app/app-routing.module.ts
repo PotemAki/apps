@@ -5,8 +5,9 @@ import { TodoComponent } from './todo/todo.component';
 import { WeatherAppComponent } from './weather-app/weather-app.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/todo',  pathMatch: 'full' },
   { path: 'todo', component: TodoComponent },
-  { path: 'apps', component: MainComponent },
+  { path: 'tools', component: MainComponent },
   { path: 'weather', component: WeatherAppComponent }
 ];
 
