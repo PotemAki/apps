@@ -7,7 +7,7 @@ export class ToDoService {
   public todo: ToDo[] = [
     {text: 'Go to church', date: 'Sat Nov 25 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"},
     {text: 'Go to shopping', date: 'Sat Nov 26 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"},
-    {text: 'Dentist appoitment', date: 'Sat Nov 29 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"}
+    {text: 'Dentist appointment', date: 'Sat Nov 29 2023 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)', id: 'IaMivtYPKPUbIqF', group:"abcdef"}
   ]
 
   public todoSubject: BehaviorSubject<ToDo[]> = new BehaviorSubject<ToDo[]>([]);
