@@ -1,0 +1,44 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="over">
+
+    <div class="inside-sidenav">
+      sdasdas
+    </div>
+
+  </mat-drawer>  
+  <mat-toolbar class="header-content">
+    <!-- <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <!-- <span class="my-app" routerLink="/">Apps.dev</span>
+    <span class="spacer"></span> -->
+    <div class="nav-buttons">
+      <button mat-button
+          matTooltip="Simple ToDo App"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+          routerLink="/todo"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">ToDo
+      </button>
+      <button 
+        mat-button
+        matTooltip="Simple useful apps"
+        routerLink="/apps"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Apps
+      </button>
+      <button 
+        mat-button
+        matTooltip="Weather App"
+        routerLink="/weather"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Weather
+      </button>
+    </div>
+  </mat-toolbar>
+  <!-- rest of the page -->
+  <div class="page">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

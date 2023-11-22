@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="message-container" *ngIf="message">
+    <span class="message">{{message}}</span>
+  </div>
+  <div class="box">
+    <h1>Generate your color!</h1>
+    <div class="output">
+      <div class="generated">Background color: 
+        <span class="output-color" 
+        [ngStyle]="{'color': color}"
+        [cdkCopyToClipboard]="color"
+        (click)="infoTimeout()">{{color}}</span>
+      </div>
+    </div>
+    <button mat-raised-button class="generate-button" (click)="generate()">
+      Generate</button>
+  </div>
+</div>

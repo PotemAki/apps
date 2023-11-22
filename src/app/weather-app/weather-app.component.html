@@ -1,0 +1,81 @@
+<div class="container">
+  <form class="form" (submit)="onSubmit()">
+    <mat-form-field class="search-box" >
+      <mat-label>City</mat-label>
+      <input type="text"
+             placeholder="Find City"
+             aria-label="Number"
+             matInput
+             name="city"
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             class="search-input">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <div *ngFor="let option of options">
+          <mat-option  [value]="option">{{option}}</mat-option>
+        </div>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div class="send-button"  (click)="onSubmit()">
+          <span type="submit" class="material-symbols-outlined">
+            send
+          </span>
+    </div>
+  </form>
+  <div class="box">
+    <mat-card class="card" *ngIf="weatherData">
+      <mat-card-header class="header">
+        <mat-card-title class="title">
+            {{weatherData.location.country}} - <span class="city">{{weatherData.location.name}}</span>
+        </mat-card-title>
+      </mat-card-header>
+      <img 
+      mat-card-image class="image" src="assets/sunnyday.jpg" *ngIf="weatherData.current.is_day === 1">
+      <img  
+      mat-card-image class="image" src="assets/night.jpg" *ngIf="weatherData.current.is_day !== 1">
+
+      <mat-card-content class="content">
+        <div class="weather-data">
+          <div class="location">{{weatherData.location.name}}</div>
+          <div class="temp">
+            <img class="special-icon" src={{icon}}> 
+            <div 
+            class="temperature">{{weatherData.current.temp_c | number: '1.0-0'}}°C</div>
+          </div>
+        </div>
+      </mat-card-content>
+      <div class="lower-content">
+        <div>
+          <div class="lower-data">
+            <div class="info-block">
+              <div class="info-block-label">
+                <img src="assets/wind.png">
+                <span>Wind</span>
+              </div>
+              <div class="info-block-value">
+                {{weatherData.current.wind_kph}} km/h
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-block-label">
+                <img src="assets/water.png">
+                <span>Humidity</span>
+              </div>
+              <div class="info-block-value">
+                {{weatherData.current.humidity}}%
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-block-additional">
+          <div class="title">
+            <img src="assets/clock.png">
+          </div>
+          <div class="local-time">{{weatherData.location.localtime}}</div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+  
+

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="projects-container">
+    <mat-tab-group dynamicHeight class="tab-group">
+      <mat-tab label="Convert-Values" class="tab">
+        <div class="tab"> 
+          <div class="large-box mat-elevation-z4">
+            <app-convert></app-convert>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Generate Color">
+        <div class="tab"> 
+          <div class="large-box mat-elevation-z4" [ngStyle]="{'background': color}">
+            <app-generate (generateColor)="giveColor($event)"></app-generate>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

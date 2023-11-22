@@ -1,0 +1,71 @@
+<div class="container" cdkDropListGroup>
+  <div class="header"
+       cdkDropList
+       [cdkDropListData]="deleted"
+       (cdkDropListDropped)="dropDelete($event)"
+       [ngClass]="{deleting: isDragging}">
+    <div class="inside-header">
+      <div class="header-one" [hidden]="isDragging">
+        ToDo
+      </div>
+      <div class="header-one" [hidden]="isDragging">
+        Archive
+      </div>
+      <div class="delete-element" 
+           [hidden]="!isDragging">
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div class="elements-container">
+    <div class="message-container" *ngIf="message">
+      <span class="message">{{message}}</span>
+    </div>
+    <div class="empty-group-info" *ngIf="isEmptyGroup()">
+      <h1>Please add new ToDo!</h1>
+    </div>
+    <div class="card"
+        cdkDropList 
+        [cdkDropListData]="todo"
+        (cdkDropListDropped)=" dropOnToDo($event)">
+      <div class="mat-group" *ngFor="let item of todo">
+        <mat-card   
+          (cdkDragStarted)="dragStarted($event, item)"
+          (cdkDragEnded)="dragEnded($event, item)"
+          cdkDragBoundary=".container"
+          class="one-element" 
+          cdkDrag 
+          *ngIf="item.group === activatedGroup">
+          <mat-card-header class="date">Due: <div class="item-date">
+            {{item.date | date: 'd MMM y'}}</div></mat-card-header>
+          <mat-divider class="divider"></mat-divider>
+          <mat-card-content class="content">{{item.text}}</mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <mat-divider vertical class="divider-ver" style="height:90%"></mat-divider>
+    <div class="card" 
+        cdkDropList 
+        [cdkDropListData]="archive"
+        (cdkDropListDropped)=" dropOnArchive($event)">
+        <div class="mat-group" *ngFor="let item of archive">
+          <mat-card 
+          (cdkDragStarted)="dragStarted($event, item)"
+          (cdkDragEnded)="dragEnded($event, item)"
+          cdkDragBoundary=".container"
+          class="one-element2" 
+          cdkDrag 
+          *ngIf="item.group === activatedGroup">
+          <mat-card-header class="date-done">Done on: <div class="item-date">
+            {{item.doneDate | date: 'd/MM/yy - hh:mm a'}}</div></mat-card-header>
+            <mat-divider class="divider"></mat-divider>
+            <mat-card-content class="content">{{item.text}}</mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+

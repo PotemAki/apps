@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="message-container" *ngIf="message">
+    <span class="message">{{message}}</span>
+  </div>
+  <form class="input-group" [formGroup]="toDoForm" (submit)="addToDo()">
+    <mat-form-field class="form-field">
+      <mat-label>New ToDo</mat-label>
+      <input 
+        matInput class="input" 
+        maxlength="50" 
+        type="text" 
+        formControlName="todo">
+        <button matSuffix mat-icon-button aria-label="Clear" type="button" 
+        (click)="reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="form-field2">
+      <mat-label>Choose a date</mat-label>
+      <input 
+        matInput 
+        [matDatepicker]="picker" 
+        formControlName="date">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error class="error">Both fields are required, please input correct date.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button class="add-button" type="submit">Add</button>
+  </form>
+  <mat-divider class="divider"></mat-divider>
+  <mat-divider vertical class="divider-ver" style="height:100%"></mat-divider>
+  <div class="group">
+    <div *ngFor="let item of groups">
+      <div class="one-group" 
+      [ngClass]="{active: activatedGroup === item.id}" 
+      (click)="toGroup(item)">{{item.name}}<mat-icon *ngIf="item.id !== 'abcdef'" class="delete-button" (click)="openDeleteGroupDialog(item.id)">close</mat-icon></div>
+    </div>
+  </div>
+  <ng-container *ngIf="showConfirmationDialog" >
+    <div class="confirmation-dialog" >
+      <div class="dialog-content">
+        <p>Are you sure you want to delete group?</p>
+        <div class="dialog-actions">
+          <button mat-raised-button (click)="cancelDelete()">Cancel</button>
+          <button mat-raised-button class="delete-group" (click)="deleteGroup()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <button mat-mini-fab class="new-tab-button" (click)="addGroup()">
+    <mat-icon>plus_one</mat-icon>
+  </button>
+  <div class="tip-element">
+    <mat-card-title class="tip"><b>Tip:</b> 
+      <p>Hold element to move it to the archive or delete it.</p></mat-card-title>
+  </div>
+
+</div>

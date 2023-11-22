@@ -1,0 +1,16 @@
+/* .spacer {
+  flex: 1 1 auto;
+} */
+.header-content{
+  background-color: rgb(36, 36, 36);
+}
+.nav-buttons{
+  margin-left: 20px;
+}
+.active{
+  background-color: rgb(56, 56, 56);
+}
+.header-content {
+  position: fixed;
+  z-index: 999;
+}

@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="message-container" *ngIf="message">
+    <span class="message">{{message}}</span>
+  </div>
+    <div class="inputs">
+      <!-- temperature -->
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input °C</mat-label>
+          <input matInput type="number" [(ngModel)]="valueC">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueC=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">
+            <div>To Fahrenheit:</div>
+        </div>
+        <div class="right-side">
+          {{outputF}} °F
+        </div>
+      </div>
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input °F</mat-label>
+          <input matInput type="number" [(ngModel)]="valueF">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueF=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">To Celsius:</div>
+        <div class="right-side">
+          {{outputC}} °C
+        </div>
+      </div>
+    </div>
+    <!-- weight -->
+    <div class="inputs">
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input kg</mat-label>
+          <input matInput type="number" [(ngModel)]="valueKG">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueKG=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">
+            <div>To Pounds:</div>
+        </div>
+        <div class="right-side">
+          {{outputLBS}} lbs
+        </div>
+      </div>
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input lbs</mat-label>
+          <input matInput type="number" [(ngModel)]="valueLBS">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueLBS=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">To Kilograms:</div>
+        <div class="right-side">
+          {{outputKG}} kg
+        </div>
+      </div>
+    </div>
+    <!-- distance -->
+    <div class="inputs">
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input km</mat-label>
+          <input matInput type="number" [(ngModel)]="valueKM">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueKM=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">
+            <div>To Miles:</div>
+        </div>
+        <div class="right-side">
+          {{outputMI}} mi
+        </div>
+      </div>
+      <div class="one-line">
+        <mat-form-field class="form-field">
+          <mat-label>Input mi</mat-label>
+          <input matInput type="number" [(ngModel)]="valueMI">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="valueMI=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="center">To Kilometers:</div>
+        <div class="right-side">
+          {{outputKM}} km
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button mat-raised-button class="button" (click)="reset()">Reset</button>
+      <button mat-raised-button class="button" (click)="convert()">Convert</button>
+    </div>
+  </div>
