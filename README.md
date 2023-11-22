@@ -1,3 +1,3 @@
 # Apps
 
-https://potemaki.github.io/apps/
+https://potemaki.github.io/apps/todo
