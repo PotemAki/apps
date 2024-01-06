@@ -30,7 +30,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './simple-apps/main.component';
 import { HeaderComponent } from './header/header.component';
 import { TodoComponent } from './todo/todo.component';
-import { StopwatchComponent } from './simple-apps/stopwatch/stopwatch.component';
 import { ConvertComponent } from './simple-apps/convert/convert.component';
 import { GenerateComponent } from './simple-apps/generate/generate.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
@@ -46,7 +45,6 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     HeaderComponent,
     TodoComponent,
-    StopwatchComponent,
     ConvertComponent,
     GenerateComponent,
     TodoListComponent,

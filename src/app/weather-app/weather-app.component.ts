@@ -31,7 +31,8 @@ export class WeatherAppComponent implements OnInit {
     'Los Angeles',
     'Berlin',
   ];
-  filteredOptions: Observable<string[]>;
+  options2: string[] = this.options;
+  error = ''
 
   constructor(private weatherService: WeatherService) {}
 
@@ -39,34 +40,46 @@ export class WeatherAppComponent implements OnInit {
   icon = '';
 
   ngOnInit(): void {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value || ''))
-    );
+    this.myControl.valueChanges.subscribe(newValue=>{
+      this.options = this.filterValues(newValue);
+  })
     this.weatherService.getData(this.city).subscribe({
       next: (response) => {
         this.weatherData = response;
         this.icon = response.current.condition.icon;
+        this.error = ''
+      },
+      error: (error) => {
+        if (error.error.error.message) {
+          this.error = error.error.error.message
+        } else {
+          this.error = 'Error fetching weather data'
+        }
       },
     });
-    this.city = '';
+    
   }
+  filterValues(search: string) {
+    return this.options2.filter(value=>
+    value.toLowerCase().indexOf(search.toLowerCase()) === 0);
+}
   onSubmit() {
-    this.city = this.myControl.value
+    this.city = this.myControl.value;
     this.weatherService.getData(this.city).subscribe({
       next: (response) => {
         this.weatherData = response;
         this.icon = response.current.condition.icon;
+        this.error = ''
+      },
+      error: (error) => {
+        if (error.error.error.message) {
+          this.error = error.error.error.message
+        } else {
+          this.error = 'Error fetching weather data'
+        }
       },
     });
     this.city = '';
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter((option) =>
-      option.toLowerCase().includes(filterValue)
-    );
-  }
 }

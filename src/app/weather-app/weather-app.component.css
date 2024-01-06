@@ -1,11 +1,12 @@
 .container{ 
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-top: 100px;
   font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  overflow: hidden;
 }
 .box{
   max-width: 500px;
@@ -169,6 +170,12 @@
   align-items: center;
   color: var(--white);
 }
+.error-msg{
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(231, 169, 169);
+}
 @media (max-width: 620px) {
   .box{
     max-width: 500px;
@@ -179,5 +186,13 @@
   .form{
     width: 100%;
 
+  }
+}
+@media (max-width: 285px) {
+  .location {
+    font-size: 16px;
+  }
+  .temperature {
+    font-size: 16px;
   }
 }
