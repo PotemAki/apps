@@ -13,15 +13,18 @@
     <!-- <span class="my-app" routerLink="/">Apps.dev</span>
     <span class="spacer"></span> -->
     <div class="nav-buttons">
-      <button mat-button
-          matTooltip="Simple ToDo App"
-          aria-label="Button that displays a tooltip when focused or hovered over"
-          routerLink="/todo"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">ToDo
+      <button 
+        mat-button
+        class="nav-button"
+        matTooltip="Simple ToDo App"
+        aria-label="Button that displays a tooltip when focused or hovered over"
+        routerLink="/todo"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">ToDo
       </button>
       <button 
         mat-button
+        class="nav-button"
         matTooltip="Simple useful apps"
         routerLink="/tools"
         routerLinkActive="active"
@@ -29,11 +32,20 @@
       </button>
       <button 
         mat-button
+        class="nav-button"
         matTooltip="Weather App"
         routerLink="/weather"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{exact: true}">Weather
       </button>
+      <!-- <button 
+        mat-button
+        class="nav-button"
+        matTooltip="Rock Papper Scissors"
+        routerLink="/game"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Game
+      </button> -->
     </div>
   </mat-toolbar>
   <!-- rest of the page -->

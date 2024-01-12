@@ -61,9 +61,12 @@
   margin-bottom: 20px;
 }
 .add-button{
-  height: 100px;
+  height: 45px;
   width: 30%;
   margin-top: 10px;
+  background-color: rgb(207, 147, 147);
+  color: white;
+  font-size: 16px;
 }
 .new-tab-button{
   margin-top: 20px;

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="output">
+    <div class="output-number">{{number}}</div>
+  </div>
+  <div class="buttons">
+    <button mat-raised-button class="stopwatch-button"      (click)="startCounting()">
+      <span class="material-symbols-outlined">play_circle</span>
+    </button>
+    <button mat-raised-button class="stopwatch-button" (click)="stopCounting()">
+      <span class="material-symbols-outlined">pause_circle</span>
+    </button>
+    <button mat-raised-button class="stopwatch-button" (click)="resetCounting()">
+      <span class="material-symbols-outlined">stop_circle</span>
+    </button>
+    <button mat-raised-button class="stopwatch-button" (click)="flagCounting()">
+      <span class="material-symbols-outlined">timer</span>
+    </button>
+  </div>
+  <div class="records">
+    <div class="temp-message"></div>
+    <div class="output-numbers" *ngFor="let record of recordsArray">{{record}}</div>
+  </div>
+</div>

@@ -38,6 +38,8 @@ import { ArchiveComponent } from './todo/archive/archive.component';
 import { DialogComponent } from './todo/menu/dialog/dialog.component';
 import { WeatherAppComponent } from './weather-app/weather-app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StopwatchComponent } from './simple-apps/stopwatch/stopwatch.component';
+import { CalculatorComponent } from './simple-apps/calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     ArchiveComponent,
     DialogComponent,
     WeatherAppComponent,
+    StopwatchComponent,
+    CalculatorComponent,
   ],
   imports: [
     BrowserModule,

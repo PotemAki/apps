@@ -1,0 +1,35 @@
+<!-- calculator.component.html -->
+<div class="container">
+  <div class="output">
+    <div class="previous-text">{{ previousText }}</div>
+    <div class="current-text">{{ currentText }}</div>
+  </div>
+  <div class="row">
+    <button mat-raised-button (click)="addNumber('1')" class="buttonstyle1">1</button>
+    <button mat-raised-button (click)="addNumber('2')" class="buttonstyle1">2</button>
+    <button mat-raised-button (click)="addNumber('3')" class="buttonstyle1">3</button>
+    <button mat-raised-button (click)="addOperator('+')" class="buttonstyle2">+</button>
+  </div>
+  <div class="row">
+    <button mat-raised-button (click)="addNumber('4')" class="buttonstyle1">4</button>
+    <button mat-raised-button (click)="addNumber('5')" class="buttonstyle1">5</button>
+    <button mat-raised-button (click)="addNumber('6')" class="buttonstyle1">6</button>
+    <button mat-raised-button (click)="addOperator('-')" class="buttonstyle2">-</button>
+  </div>
+  <div class="row">
+    <button mat-raised-button (click)="addNumber('7')" class="buttonstyle1">7</button>
+    <button mat-raised-button (click)="addNumber('8')" class="buttonstyle1">8</button>
+    <button mat-raised-button (click)="addNumber('9')" class="buttonstyle1">9</button>
+    <button mat-raised-button (click)="addOperator('*')" class="buttonstyle2">*</button>
+  </div>
+  <div class="row">
+    <button mat-raised-button (click)="addNumber('0')" class="buttonstyle1">0</button>
+    <button mat-raised-button (click)="addNumber('.')" class="buttonstyle1">.</button>
+    <button mat-raised-button (click)="delete()" class="buttonstyle1">X</button>
+    <button mat-raised-button (click)="addOperator('/')" class="buttonstyle2">/</button>
+  </div>
+  <div class="row">
+    <button mat-raised-button (click)="clear()" class="buttonstyle3">C</button>
+    <button mat-raised-button (click)="resultMath()" class="buttonstyle3">=</button>
+  </div>
+</div>

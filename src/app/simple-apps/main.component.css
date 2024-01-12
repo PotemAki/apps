@@ -22,8 +22,14 @@
   width: 100%;
   max-width: 900px;
   height: 600px;
-  background-color: #FAEBD7;
+  background-color: #FAEBD7; 
   transition: 0.3s;
+}
+.stopwatch-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 .tab{
   display: flex;

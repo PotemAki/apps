@@ -1,0 +1,81 @@
+.container {
+  background-color: rgb(58, 58, 58);
+  padding: 25px 25px;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+.output{
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+.output-number{
+  text-align: center;
+  font-size: 36px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.stopwatch-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100px;
+  background-color: rgb(211, 171, 171);
+}
+
+.material-symbols-outlined {
+  margin-top: 5px;
+  font-size: 50px;
+  color: rgb(48, 48, 48);
+}
+
+.output-numbers{
+  display: flex;
+  margin-left: 25px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.temp-message{ 
+  color: rgb(243, 167, 167);
+  font-weight: bold;
+  height: 20px;
+  font-size: 18px;
+  margin: 15px 0px 15px 25px;
+}
+
+@media (max-width: 440px ) {
+  .stopwatch-button{
+    height: 50%;
+    width: 50px;
+  }
+  .material-symbols-outlined {
+    font-size: 36px;
+  }
+  .temp-message{ 
+    font-size: 15px;
+  }
+}
+@media (max-width: 300px) {
+  .buttons{
+    flex-direction: column;
+    gap: 5px;
+  }
+  .stopwatch-button{
+    width: 100%;
+  }
+  .material-symbols-outlined {
+    font-size: 26px;
+  }
+  .temp-message{ 
+    font-size: 15px;
+    margin-bottom: 25px
+  }
+}

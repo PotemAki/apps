@@ -1,7 +1,21 @@
 <div class="container">
   <div class="projects-container">
     <mat-tab-group dynamicHeight class="tab-group">
-      <mat-tab label="Convert-Values" class="tab">
+      <mat-tab label="Calculator" >
+        <div class="tab"> 
+          <div class="stopwatch-box">
+            <app-calculator></app-calculator>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="StopWatch" >
+        <div class="tab"> 
+          <div class="stopwatch-box">
+            <app-stopwatch></app-stopwatch>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Convert-Values" >
         <div class="tab"> 
           <div class="large-box mat-elevation-z4">
             <app-convert></app-convert>
