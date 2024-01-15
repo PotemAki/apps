@@ -46,8 +46,8 @@ export class GamesComponent {
       }
     }
     this.updateScore(this.result);
-    this.playerPick = `../../assets/icons/${pickMove}-emoji.png`
-    this.computerPick = `../../assets/icons/${computerMove}-emoji.png`
+    this.playerPick = `assets/icons/${pickMove}-emoji.png`
+    this.computerPick = `assets/icons/${computerMove}-emoji.png`
   }
 
   computerPlay(): string {
