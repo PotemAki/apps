@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="box-element">
+    <p class="game-title">Rock Paper Scissors</p>
+    <div class="group-buttons">
+      <button class="game-button" (click)="playGame('rock')">
+        <img class="icon1" src="../../assets/icons/rock-emoji.png">
+      </button>
+      <button class="game-button" (click)="playGame('paper')">
+        <img class="icon1" src="../../assets/icons/paper-emoji.png">
+      </button>
+      <button class="game-button" (click)="playGame('scissors')">
+        <img class="icon1" src="../../assets/icons/scissors-emoji.png">
+      </button>
+    </div>
+    <div class="output-group">
+      <p class="output-result">{{ result }}</p>
+      <div class="output-game">
+        <div class="output-current" >
+          <div *ngIf="playerPick">
+            You <img class="icon1" [src]="playerPick">vs<img class="icon1" [src]="computerPick"> Computer
+          </div>
+        </div>
+        <p class="output-score">
+          Wins: {{ score.wins }}, Losses: {{ score.losses }}, Ties: {{ score.ties }}
+        </p>
+      </div>
+    </div>
+    <div class="settings-group">
+      <button mat-raised-button class="settings-button" (click)="resetScore()">Reset Score</button>
+      <button mat-raised-button class="settings-button" (click)="autoPlay()">{{isAutoPlaying? 'Stop Autoplay' : 'Auto Play'}}</button>
+    </div>
+  </div>
+</div>

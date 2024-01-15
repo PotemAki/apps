@@ -40,6 +40,7 @@ import { WeatherAppComponent } from './weather-app/weather-app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StopwatchComponent } from './simple-apps/stopwatch/stopwatch.component';
 import { CalculatorComponent } from './simple-apps/calculator/calculator.component';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CalculatorComponent } from './simple-apps/calculator/calculator.compone
     WeatherAppComponent,
     StopwatchComponent,
     CalculatorComponent,
+    GamesComponent,
   ],
   imports: [
     BrowserModule,

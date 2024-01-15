@@ -17,3 +17,31 @@
 .nav-button{
   margin-right: 2px;
 }
+/* .inside-sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidenav{
+  width: 80%;
+  padding: 20px 5px;
+}
+.drawer-button{
+  display: none;
+} */
+@media (max-width: 350px) {
+  .nav-buttons{
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 290px) {
+  .nav-buttons{
+    margin-left: -20px;
+  }
+  .nav-button{
+    margin-right: 2px;
+    width: 50px;
+  }
+}
